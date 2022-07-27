@@ -94,6 +94,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "pet-health-care:build:production",
+            "firebaseProject": "pet-health-care-67e01",
+            "firebaseHostingSite": "pet-health-care-67e01"
+          }
         }
       }
     }

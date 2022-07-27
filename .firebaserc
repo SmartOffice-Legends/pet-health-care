@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "pet-health-care-67e01"
+  },
+  "targets": {
+    "pet-health-care-67e01": {
+      "hosting": {
+        "pet-health-care": [
+          "pet-health-care-67e01"
+        ]
+      }
+    }
+  }
+}
