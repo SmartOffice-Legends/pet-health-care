@@ -59,4 +59,5 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: deploy-loads # The branch the action should deploy to.
-          folder: deploy # The folder the action should deploy.
+          folder: dist # The folder the action should deploy.
+          target-folder: deploy
