@@ -50,7 +50,7 @@ The project was developed using the following technologies:
 - `npm install`
 - `npm start && npm test`
 
-:warning: For more clear result's you need to [Angular CLI](https://angular.io/)
+:warning: For more clear results, you need to [Angular CLI](https://angular.io/)
 
 If you are trouble with your node enviroment, We suggest [Node Version Manager](https://github.com/nvm-sh/nvm)
 
