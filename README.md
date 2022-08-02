@@ -2,7 +2,7 @@
 Pet Health Care
 </h1>
 <h2 align="center">
-  <img alt="logo" src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" />
+  <img alt="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR0OQfdQDm1AhDwkY1NUHCpPG3pNZ4zYHPUtuW3pCovFnpm8173qoppS-Cmit15KjwFSs&usqp=CAU" />
 </h2>
 
 ---
@@ -27,15 +27,13 @@ The project was developed using the following technologies:
 - [TypeScript](https://www.typescriptlang.org/) 
 - [Node.js](https://nodejs.org/)
 - [Angular](https://angular.io/)
-- [Jest](https://jestjs.io/)
 - [Fire Base](https://www.mongodb.com/)
 - [ESLint](https://eslint.org/)
 
 ## :seedling: Minimal Requirements
 
-- [Node v10+](https://nodejs.org/en/docs/)
+- [Node v15+](https://nodejs.org/en/docs/)
 - [NPM](https://www.npmjs.com/) or [Yarn](https://classic.yarnpkg.com/en/docs/).
-- [Docker](https://www.docker.com/)
 
 ## :beginner: Getting Started
 
@@ -45,10 +43,10 @@ The project was developed using the following technologies:
 
 ### :link: Regular Installation
 
-<b>Download the dependences:</b>
--`cd pet-health-cared`
+<b>Download the dependences: </b>
+- `cd pet-health-cared`
 - `npm install`
-- `npm start && npm test`
+- `npm start `
 
 :warning: For more clear results, you need to [Angular CLI](https://angular.io/)
 
