@@ -9,7 +9,7 @@ export class UserModel {
 
   public mobileNumber: number;
 
-  // PetPassports will create in future
+  // PetPassports model will generate in the future
   public petPassports: Array<object>;
 
   constructor(
