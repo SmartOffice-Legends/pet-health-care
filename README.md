@@ -1,8 +1,8 @@
 <h1 align="center"> 
-An Angular web app with mobile friendly user interface to store, view, share and manage health information about pets.
+Pet Health Care
 </h1>
 <h2 align="center">
-  <img alt="logo" src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" />
+  <img alt="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR0OQfdQDm1AhDwkY1NUHCpPG3pNZ4zYHPUtuW3pCovFnpm8173qoppS-Cmit15KjwFSs&usqp=CAU" />
 </h2>
 
 ---
@@ -12,78 +12,89 @@ An Angular web app with mobile friendly user interface to store, view, share and
   <a href="#rocket-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#seedling-minimal-requirements">Requirements</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#beginner-getting-started">Getting Started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#beginner-getting-started">Project</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </h4>
 
 ## :information_source: About
+An Angular web app with mobile friendly user interface to store, view, share and manage health information about pets.
 
-Simple ToDo list application with BDD and TDD approach.
-If you look at the comments, you can better understand the approach, in this approach firstly, I started the acceptance test which is my expected behavior from customers
-Then, moved to front-end and wrote basic unit test my all test failed which is expected, I started the development through my test. Same scenario for the backend.
 
 ## :rocket: Technologies
 
 The project was developed using the following technologies:
 
 - [JavaScript](https://www.javascript.com/)
+- [TypeScript](https://www.typescriptlang.org/) 
 - [Node.js](https://nodejs.org/)
-- [Taiko](https://taiko.dev/)
-- [Gauge](https://gauge.org/)
-- [React](https://reactjs.org/)
-- [Jest](https://jestjs.io/)
-- [Mongo Db](https://www.mongodb.com/)
+- [Angular](https://angular.io/)
+- [Fire Base](https://www.mongodb.com/)
 - [ESLint](https://eslint.org/)
 
 ## :seedling: Minimal Requirements
 
-- [Node v10+](https://nodejs.org/en/docs/)
+- [Node v15+](https://nodejs.org/en/docs/)
 - [NPM](https://www.npmjs.com/) or [Yarn](https://classic.yarnpkg.com/en/docs/).
-- [Docker](https://www.docker.com/)
 
 ## :beginner: Getting Started
 
 <b>Cloning the repository:</b>
 
-- `$ git clone https://github.com/abdullahsuhaisk/Tdd-Todo.git`
-
-<b>Download the dependences:</b>
-
-<p>This project has 3 projects inside of it</p>
-<p>Every step has own install.You can follow regular installation or docker</p>
+- `$ git clone https://github.com/SmartOffice-Legends/pet-health-care`
 
 ### :link: Regular Installation
-<b>For Front-End</b>
--`cd todo-frontend`
+
+<b>Download the dependences: </b>
+- `cd pet-health-cared`
 - `npm install`
-- `npm start && npm test`
+- `npm start `
 
-<b>For Back-End</b>
--`cd todo-backend`
-- `npm install`
-- `npm start && npm test`
+:warning: For more clear results, you need to [Angular CLI](https://angular.io/)
 
-<b>For Acceptance</b>
--`cd ToDo_Acceptance`
-- `npm install`
+If you are trouble with your node enviroment, We suggest [Node Version Manager](https://github.com/nvm-sh/nvm)
 
-<p> For run test go specs folder open todo.spec -> press run spec on left corner </p>
 
-### :link: Docker Installation
-<b>For Front-End</b>
-- `cd todo-frontend`
-- `docker build -f Dockerfile -t client`
-- `cd ..`
+## :paperclip: Project
 
-<b>For Back-End</b>
-- `cd todo-backend`
-- `docker build -f Dockerfile -t server`
-- `cd ..`
+### :open_file_folder: Folder Structure
 
-<b>For Acceptance</b>
-- `cd ToDo_Acceptance`
-- `docker build -f Dockerfile -t acceptance`
-- `cd ..`
-
- After above steps, on root you should run =>
- - `docker - compose up`
- 
-
+    ├── app/
+    │   ├── core/
+    │   │   ├── guards
+    │   │   ├── interceptors
+    │   │   └── services
+    │   ├── pages/
+    │   │   ├── user/
+    │   │   │   ├── user-login
+    │   │   │   ├── user-sign-up
+    │   │   │   ├── user-reset-password
+    │   │   │   └── user.module.ts
+    │   │   ├── home
+    │   │   ├── error
+    │   │   ├── template/
+    │   │   │   ├── footer
+    │   │   │   └── header
+    │   │   ├── common-layout-routing.module.ts
+    │   │   ├── common-layout.component.html
+    │   │   ├── common-layout.component.scss
+    │   │   ├── common-layout.component.ts
+    │   │   └── common-layout.module.ts
+    │   ├── shared/
+    │   │   ├── components
+    │   │   ├── directives
+    │   │   └── pipes
+    │   ├── app-routing.module.ts
+    │   ├── app.component.css
+    │   ├── app.component.html
+    │   ├── app.component.spec.ts
+    │   ├── app.component.ts
+    │   └── app.module.ts
+    ├── assets
+    ├── environments/
+    │   ├── environment.ts
+    │   ├── environment.prod.ts
+    │   └── firbase-config/
+    │       ├── database.rules.json
+    │       ├── firestore.indexes.json
+    │       └── firestore.rules
+    └── styles/
+        └── styles.css (concatenated target stylesheet file)
