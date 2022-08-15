@@ -35,6 +35,7 @@
         "max-len": ["error", { "code": 180 }],
         "import/prefer-default-export": "off",
         "no-console": "off",
-        "max-lines": ["error", {"max": 200, "skipBlankLines": true, "skipComments": true}]
+        "max-lines": ["error", {"max": 200, "skipBlankLines": true, "skipComments": true}],
+        "class-methods-use-this": "off"
     }
 }

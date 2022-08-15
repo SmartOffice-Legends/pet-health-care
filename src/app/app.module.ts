@@ -9,6 +9,8 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { IStorage } from './core/services/Storage/IStorage';
+import { IndexDBStorageService } from './core/services/Storage/IndexDBStorage.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,7 @@ import { AppRoutingModule } from './app-routing.module';
     provideFirestore(() => { return getFirestore(); }),
     provideStorage(() => { return getStorage(); }),
   ],
-  providers: [],
+  providers: [{ provide: IStorage, useValue: IndexDBStorageService }],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IndexDBStorageService } from './core/services/Storage/IndexDBStorage.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pet-health-care';
+
+  constructor(private StorageService: IndexDBStorageService) {
+  }
+
+  init() {
+    const storageService: IndexDBStorageService = this.StorageService();
+  }
 }
