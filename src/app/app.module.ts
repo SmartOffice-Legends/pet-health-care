@@ -25,7 +25,7 @@ import { IndexDBStorageService } from './core/services/Storage/IndexDBStorage.se
     provideFirestore(() => { return getFirestore(); }),
     provideStorage(() => { return getStorage(); }),
   ],
-  providers: [{ provide: IStorage, useValue: IndexDBStorageService }],
+  providers: [{ provide: IStorage, useClass: IndexDBStorageService }],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

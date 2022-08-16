@@ -1,7 +1,4 @@
 export abstract class IStorage {
-  constructor() {
-    console.log('hi');
-  }
   /**
    * @param  {string} key
    * @param  {string} value
