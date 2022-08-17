@@ -18,6 +18,21 @@ export class LocalStorageService extends IStorage {
     });
   }
 
+  updateItem(key: string, value: any): Promise<boolean> {
+    return new Promise((resolve) => {
+      this.getItem(key).then((result) => {
+        if (result) {
+          this.setItem(key, value).then(() => {
+            resolve(true);
+          });
+        } else {
+          console.error('Item does not exist');
+          resolve(false);
+        }
+      });
+    });
+  }
+
   removeItem(key: string): Promise<boolean> {
     return new Promise((resolve) => {
       localStorage.removeItem(key);

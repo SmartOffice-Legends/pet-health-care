@@ -10,7 +10,7 @@ import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { IStorage } from './core/services/Storage/IStorage';
-import { IndexDBStorageService } from './core/services/Storage/IndexDBStorage.service';
+import { LocalStorageService } from './core/services/Storage/LocalStorageService.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { IndexDBStorageService } from './core/services/Storage/IndexDBStorage.se
     provideFirestore(() => { return getFirestore(); }),
     provideStorage(() => { return getStorage(); }),
   ],
-  providers: [{ provide: IStorage, useClass: IndexDBStorageService }],
+  providers: [{ provide: IStorage, useClass: LocalStorageService }],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

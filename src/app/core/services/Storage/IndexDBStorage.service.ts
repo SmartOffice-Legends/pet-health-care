@@ -43,7 +43,6 @@ export class IndexDBStorageService extends IStorage {
     // Check for support.
     if (!('indexedDB' in window)) {
       console.log("This browser doesn't support IndexedDB.");
-      // Throw new Error("This browser doesn't support IndexedDB.");
     } else {
       (async () => {
         this.idb = window.indexedDB;
@@ -52,7 +51,10 @@ export class IndexDBStorageService extends IStorage {
     }
   }
 
-  async IDBFactory(idb: IDBFactory): Promise<void> {
+  /**
+   * @param  {IDBFactory} idb
+   */
+  private async IDBFactory(idb: IDBFactory): Promise<void> {
     const dbConnection = await idb.open(IndexDBStorageService.DB_NAME, 1);
     dbConnection.onupgradeneeded = () => {
       const db = dbConnection.result;
@@ -213,40 +215,24 @@ export class IndexDBStorageService extends IStorage {
     return null;
   }
 
-  async put(params: any): Promise<void> {
-    const txItems = await this.getTransactionItems(IDBTransactionModes.READ_WRITE);
-    const txItemsObject = txItems ? { ...txItems } : null;
-    if (txItemsObject) {
-      const { db, tx, store } = { ...txItemsObject };
-      const putRequest = await store.put({ ...params });
-      putRequest.onerror = (error) => {
-        console.error('Error putting item');
-        console.error(error);
-      };
-      await tx.oncomplete;
-      db.close();
+  async updateItem(key: string, value: any): Promise<boolean> {
+    const itemExists = await this.getItem(key);
+    if (itemExists) {
+      const txItems = await this.getTransactionItems(IDBTransactionModes.READ_WRITE);
+      const txItemsObject = txItems ? { ...txItems } : null;
+      if (txItemsObject) {
+        const { db, tx, store } = { ...txItemsObject };
+        const putRequest = await store.put(value, key);
+        putRequest.onerror = (error) => {
+          console.error('Error putting item');
+          console.error(error);
+        };
+        await tx.oncomplete;
+        db.close();
+        return true;
+      }
+      return false;
     }
-  }
-
-  async getItemKey(key: string): Promise<string | null> {
-    const txItems = await this.getTransactionItems(IDBTransactionModes.READ_WRITE);
-    const txItemsObject = txItems ? { ...txItems } : null;
-    if (txItemsObject) {
-      const { db, tx, store } = { ...txItemsObject };
-      const getKeyRequest = await store.getKey(key);
-      let value;
-      getKeyRequest.onsuccess = () => {
-        value = getKeyRequest.result;
-      };
-      getKeyRequest.onerror = (error) => {
-        console.error('Error getting item key');
-        console.error(error);
-      };
-      await tx.oncomplete;
-      db.close();
-      value = value || null;
-      return value;
-    }
-    return null;
+    return false;
   }
 }
